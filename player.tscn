@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dcwu6tegbrq0t"]
+
+[ext_resource type="PackedScene" uid="uid://c1wxat3bwaohn" path="res://assets/player.glb" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://h0jbqx2h00hq" path="res://scripts/player.gd" id="1_i3pqv"]
+[ext_resource type="Script" uid="uid://d4dy3xqje1lpq" path="res://scripts/spring_arm_3d.gd" id="3_hqtel"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rxlmh"]
+radius = 0.74871826
+height = 1.4974365
+
+[node name="Character" type="CharacterBody3D" unique_id=669840916]
+script = ExtResource("1_i3pqv")
+
+[node name="player" parent="." unique_id=202510506 instance=ExtResource("1_4flbx")]
+
+[node name="Skeleton3D" parent="player/Armature" parent_id_path=PackedInt32Array(202510506, 1959839142) index="0" unique_id=1183080006]
+bones/5/rotation = Quaternion(1.07229745e-07, 1.0317736e-08, -0.7162248, 0.6978697)
+bones/7/rotation = Quaternion(1.0850565e-07, -1.2802307e-08, 0.7162247, 0.69786984)
+bones/9/rotation = Quaternion(-0.51502347, -0.0015275966, -0.0023102332, 0.8571716)
+bones/10/rotation = Quaternion(-7.2588002e-09, -6.2758167e-12, 0.008692258, 0.9999622)
+bones/14/rotation = Quaternion(-0.51071924, 0.0015148297, 0.0023171636, 0.85974306)
+bones/15/rotation = Quaternion(-7.260341e-09, 6.448619e-11, -0.008692258, 0.9999622)
+bones/17/rotation = Quaternion(0.56970024, -0.49511808, -0.49511808, -0.43029976)
+bones/20/rotation = Quaternion(0.56970024, 0.49511808, 0.49511808, -0.43029976)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=830991158]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7567113, 0)
+shape = SubResource("CapsuleShape3D_rxlmh")
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=1204758923]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0967617, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot" unique_id=929137103]
+spring_length = 3.0
+script = ExtResource("3_hqtel")
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D" unique_id=314295388]
+
+[editable path="player"]
