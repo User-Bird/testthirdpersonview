@@ -1,3 +1,19 @@
-# Godot 4+ specific ignores
+# 1. Standard Godot Cache (Already ignored by default, but keep it)
 .godot/
-/android/
+*.fscache
+
+# 2. AI Optimization: Ignore ALL binary and image files
+*.glb
+*.blend
+*.blend1
+*.png
+*.jpg
+*.jpeg
+*.svg
+
+# 3. AI Optimization: Ignore useless metadata noise
+*.import
+
+# 4. OS hidden files
+.DS_Store
+Thumbs.db
