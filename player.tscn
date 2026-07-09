@@ -5,19 +5,16 @@
 [ext_resource type="Script" uid="uid://d4dy3xqje1lpq" path="res://scripts/spring_arm_3d.gd" id="3_hqtel"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rxlmh"]
-radius = 0.8137207
-height = 1.6274414
+radius = 0.69104004
+height = 1.3820801
 
 [node name="Character" type="CharacterBody3D" unique_id=669840916]
 script = ExtResource("1_i3pqv")
 
 [node name="player" parent="." unique_id=202510506 instance=ExtResource("1_4flbx")]
 
-[node name="Skeleton3D" parent="player/Armature" parent_id_path=PackedInt32Array(202510506, 1239971906) index="0" unique_id=211020597]
-bones/5/rotation = Quaternion(1.07229745e-07, 1.0317736e-08, -0.7162248, 0.6978697)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=830991158]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.81408435, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.66998035, 0)
 shape = SubResource("CapsuleShape3D_rxlmh")
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=1204758923]
