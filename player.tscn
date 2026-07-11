@@ -4,9 +4,8 @@
 [ext_resource type="Script" uid="uid://h0jbqx2h00hq" path="res://scripts/player.gd" id="1_i3pqv"]
 [ext_resource type="Script" uid="uid://d4dy3xqje1lpq" path="res://scripts/spring_arm_3d.gd" id="3_hqtel"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rxlmh"]
-radius = 0.69104004
-height = 1.3820801
+[sub_resource type="SphereShape3D" id="SphereShape3D_i3pqv"]
+radius = 0.6338856
 
 [node name="Character" type="CharacterBody3D" unique_id=669840916]
 script = ExtResource("1_i3pqv")
@@ -14,8 +13,8 @@ script = ExtResource("1_i3pqv")
 [node name="player" parent="." unique_id=202510506 instance=ExtResource("1_4flbx")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=830991158]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.66998035, 0)
-shape = SubResource("CapsuleShape3D_rxlmh")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.63406116, 0.050094604)
+shape = SubResource("SphereShape3D_i3pqv")
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=1204758923]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0967617, 0)
