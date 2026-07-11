@@ -4,17 +4,99 @@
 [ext_resource type="Script" uid="uid://h0jbqx2h00hq" path="res://scripts/player.gd" id="1_i3pqv"]
 [ext_resource type="Script" uid="uid://d4dy3xqje1lpq" path="res://scripts/spring_arm_3d.gd" id="3_hqtel"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_i3pqv"]
-radius = 0.6338856
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jtg8w"]
+radius = 0.38427734
+height = 1.2241211
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rxlmh"]
+radius = 0.31072372
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0vf6b"]
+radius = 0.2310519
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1y32p"]
+radius = 0.30203024
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_v64fn"]
+radius = 0.28076276
 
 [node name="Character" type="CharacterBody3D" unique_id=669840916]
 script = ExtResource("1_i3pqv")
 
 [node name="player" parent="." unique_id=202510506 instance=ExtResource("1_4flbx")]
 
+[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="player/Armature/Skeleton3D" parent_id_path=PackedInt32Array(202510506, 106682748) index="14" unique_id=827671087]
+setting_count = 2
+settings/0/root_bone_name = "upperarm_l"
+settings/0/root_bone = 1
+settings/0/end_bone_name = "upperarm_l"
+settings/0/end_bone = 1
+settings/0/extend_end_bone = true
+settings/0/end_bone/direction = 6
+settings/0/end_bone/length = 0.5
+settings/0/center_from = 0
+settings/0/individual_config = false
+settings/0/rotation_axis = 3
+settings/0/radius/value = 0.02
+settings/0/radius/damping_curve = null
+settings/0/stiffness/value = 1.0
+settings/0/stiffness/damping_curve = null
+settings/0/drag/value = 0.4
+settings/0/drag/damping_curve = null
+settings/0/gravity/value = 0.0
+settings/0/gravity/damping_curve = null
+settings/0/gravity/direction = Vector3(0, -1, 0)
+settings/0/joints/0/bone_name = "upperarm_l"
+settings/0/joints/0/bone = 1
+settings/0/enable_all_child_collisions = true
+settings/0/exclude_collision_count = 0
+settings/1/root_bone_name = "upperarm_r"
+settings/1/root_bone = 3
+settings/1/end_bone_name = "upperarm_r"
+settings/1/end_bone = 3
+settings/1/extend_end_bone = true
+settings/1/end_bone/direction = 6
+settings/1/end_bone/length = 0.5
+settings/1/center_from = 0
+settings/1/individual_config = false
+settings/1/rotation_axis = 3
+settings/1/radius/value = 0.02
+settings/1/radius/damping_curve = null
+settings/1/stiffness/value = 1.0
+settings/1/stiffness/damping_curve = null
+settings/1/drag/value = 0.4
+settings/1/drag/damping_curve = null
+settings/1/gravity/value = 0.0
+settings/1/gravity/damping_curve = null
+settings/1/gravity/direction = Vector3(0, -1, 0)
+settings/1/joints/0/bone_name = "upperarm_r"
+settings/1/joints/0/bone = 3
+settings/1/enable_all_child_collisions = true
+settings/1/exclude_collision_count = 0
+
+[node name="SpringBoneCollisionSphere3D2" type="SpringBoneCollisionSphere3D" parent="player/Armature/Skeleton3D/SpringBoneSimulator3D" unique_id=1328020850]
+transform = Transform3D(1.0000008, 0, 0, 0, 1.0000008, 0, 0, 0, 1.0000008, 0, 0.8649141, 0.08244506)
+radius = 0.666
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=830991158]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.63406116, 0.050094604)
-shape = SubResource("SphereShape3D_i3pqv")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.62014514, 0.050094604)
+shape = SubResource("CapsuleShape3D_jtg8w")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=2045657896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013125062, 0.5787552, 0.39553386)
+shape = SubResource("SphereShape3D_rxlmh")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1112244798]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022828072, 0.6246084, -0.37915677)
+shape = SubResource("SphereShape3D_0vf6b")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=1403048733]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9343872, 0.15002945)
+shape = SubResource("SphereShape3D_1y32p")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="." unique_id=1910677645]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8845246, -0.20304155)
+shape = SubResource("SphereShape3D_v64fn")
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=1204758923]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0967617, 0)
