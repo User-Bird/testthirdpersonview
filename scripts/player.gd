@@ -12,8 +12,13 @@ const JUMP_VELOCITY = 3.0
 var was_in_air = false
 
 func _physics_process(delta: float) -> void:
+	var gravity = get_gravity().y
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity.y -= gravity * delta
+	
+	# ADD THIS TO FIX THE EXPLOSION:
+	if velocity.y < -30.0: # Play with this number. -30 is a fast, safe fall.
+		velocity.y = -30.0
 
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
