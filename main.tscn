@@ -39,6 +39,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.61270165, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1037047200]
 transform = Transform3D(0.12824747, -0.5076223, 0.8519812, 0.24933869, 0.8479851, 0.4677087, -0.9598869, 0.15244943, 0.2353219, 3.3749099, 4.817803, 1.2932537)
+shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1623833980]
 environment = SubResource("Environment_rxlmh")

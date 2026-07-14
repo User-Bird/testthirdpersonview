@@ -25,12 +25,58 @@ script = ExtResource("1_i3pqv")
 
 [node name="player" parent="." unique_id=202510506 instance=ExtResource("1_4flbx")]
 
-[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="player/Armature/Skeleton3D" parent_id_path=PackedInt32Array(202510506, 1698681921) index="14" unique_id=827671087]
+[node name="Skeleton3D" parent="player/Armature" parent_id_path=PackedInt32Array(202510506, 1565979592) index="0" unique_id=779132484]
+bones/0/position = Vector3(3.760412e-09, 0.29175687, 0.08904195)
+bones/0/rotation = Quaternion(-1.9010407e-07, 0.18450882, 0.98283094, 4.2087347e-08)
+bones/1/position = Vector3(-1.6697758e-11, 0.2910704, -0.10301124)
+bones/1/rotation = Quaternion(0.97972256, 1.9416989e-10, 9.494581e-10, -0.20035914)
+bones/3/position = Vector3(-0.00037252333, 0.22368811, 2.3188542e-05)
+bones/3/scale = Vector3(1.0007851, 0.9499999, 1.000789)
+bones/4/rotation = Quaternion(0.99998385, 0.0037368145, -0.002871899, -0.0032075937)
+bones/7/rotation = Quaternion(0.9975702, -0.00772745, 0.0042057186, -0.069110334)
+
+[node name="left_eye_bone" parent="player/Armature/Skeleton3D" index="0" unique_id=1966426941]
+transform = Transform3D(0.98916674, -0.15202674, -0.0015737315, 0.14355077, 0.9385382, 0.032320835, -0.0036098207, -0.03384356, 1.0002102, 0.43209693, 0.57475793, 0.12942488)
+
+[node name="left_puple_bone" parent="player/Armature/Skeleton3D" index="1" unique_id=1100122221]
+transform = Transform3D(0.9954727, -0.10295249, -0.00052606035, 0.09699503, 0.9449888, 0.009677077, -0.00052010897, -0.010145952, 1.0007373, 0.43018004, 0.63551, 0.16703387)
+
+[node name="left_eyebrow_bone" parent="player/Armature/Skeleton3D" index="2" unique_id=1804568152]
+transform = Transform3D(1.0007035, 0.012571481, -0.00014179994, -0.0077996254, 0.57071185, 0.7594291, 0.010134843, -0.7999343, 0.6013163, 0.37543324, 0.7530285, 0.20121326)
+
+[node name="right_eye_bone" parent="player/Armature/Skeleton3D" index="3" unique_id=1255459396]
+transform = Transform3D(0.9902112, -0.14507546, -0.0005551792, 0.13698024, 0.9400632, -0.0047716433, 0.0012854161, 0.0049413955, 1.0007758, 0.42471004, 0.56998026, -0.14418791)
+
+[node name="right_puple_bone" parent="player/Armature/Skeleton3D" index="4" unique_id=1479883476]
+transform = Transform3D(0.99175507, -0.13402374, 0.0050049615, 0.12658085, 0.94079584, -0.037225764, 0.00030208047, 0.039576814, 1.0000061, 0.42167148, 0.64712894, -0.16227594)
+
+[node name="right_eyebrow_bone" parent="player/Armature/Skeleton3D" index="5" unique_id=834727979]
+transform = Transform3D(0.037204586, 0.14667723, -0.989276, -0.8414567, 0.43963686, 0.03428441, 0.46306527, 0.87492836, 0.14713767, 0.35986668, 0.7630607, -0.19611162)
+
+[node name="mouth_bone" parent="player/Armature/Skeleton3D" index="6" unique_id=759432382]
+transform = Transform3D(0.98705703, -0.086314164, 0.14083198, -0.13533247, -0.0048460653, 0.9403014, -0.08472142, -0.99704677, -0.017283203, 0.44761756, 0.54079443, 0.0096655805)
+
+[node name="tie_bone" parent="player/Armature/Skeleton3D" index="7" unique_id=1185185871]
+transform = Transform3D(-0.80237025, -0.09941699, 0.5898244, 0.11358206, -0.94317114, -0.00571611, 0.5861921, 0.06564325, 0.80848986, 0.4294039, 0.432163, -0.007372081)
+
+[node name="goo_surface_front1_bone" parent="player/Armature/Skeleton3D" index="8" unique_id=764609336]
+transform = Transform3D(0.97704035, -0.21468568, -0.02945465, 0.2030848, 0.89304733, 0.25244468, -0.02934926, -0.26588246, 0.9643773, 0.24793474, 1.039304, 0.45928207)
+
+[node name="goo_surface_back1_bone" parent="player/Armature/Skeleton3D" index="9" unique_id=2514991]
+transform = Transform3D(0.96145487, 0.27237993, 0.05458197, -0.26217586, 0.86286867, 0.2987087, 0.036055762, -0.31733093, 0.9484616, -0.40643033, 0.7015305, 0.20558512)
+
+[node name="goo_surface_back2_bone" parent="player/Armature/Skeleton3D" index="10" unique_id=1954298857]
+transform = Transform3D(1.0007823, -0.00037833702, 1.7829007e-07, -0.00037838772, 0.95000273, 2.3642555e-05, 1.7846469e-07, 2.346668e-05, 1.0007889, -0.36565965, 0.49160388, -0.2781054)
+
+[node name="goo_surface_front2_bone" parent="player/Armature/Skeleton3D" index="11" unique_id=1487171748]
+transform = Transform3D(0.9699803, 0.24049084, -0.05355143, -0.22897074, 0.83195484, -0.39740258, -0.053716034, 0.41871184, 0.90739924, -0.13461433, 1.0231745, -0.56312)
+
+[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="player/Armature/Skeleton3D" index="14" unique_id=827671087]
 setting_count = 2
 settings/0/root_bone_name = "anchor_l"
-settings/0/root_bone = 1
+settings/0/root_bone = 4
 settings/0/end_bone_name = "forearm_l"
-settings/0/end_bone = 3
+settings/0/end_bone = 6
 settings/0/extend_end_bone = false
 settings/0/center_from = 0
 settings/0/individual_config = false
@@ -39,23 +85,23 @@ settings/0/radius/value = 0.02
 settings/0/radius/damping_curve = null
 settings/0/stiffness/value = 1.0
 settings/0/stiffness/damping_curve = null
-settings/0/drag/value = 1.0
+settings/0/drag/value = 0.8
 settings/0/drag/damping_curve = null
 settings/0/gravity/value = 0.0
 settings/0/gravity/damping_curve = null
 settings/0/gravity/direction = Vector3(0, -1, 0)
 settings/0/joints/0/bone_name = "anchor_l"
-settings/0/joints/0/bone = 1
+settings/0/joints/0/bone = 4
 settings/0/joints/1/bone_name = "upperarm_l"
-settings/0/joints/1/bone = 2
+settings/0/joints/1/bone = 5
 settings/0/joints/2/bone_name = "forearm_l"
-settings/0/joints/2/bone = 3
+settings/0/joints/2/bone = 6
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 settings/1/root_bone_name = "anchor_r"
-settings/1/root_bone = 4
+settings/1/root_bone = 7
 settings/1/end_bone_name = "forearm_r"
-settings/1/end_bone = 6
+settings/1/end_bone = 9
 settings/1/extend_end_bone = false
 settings/1/center_from = 0
 settings/1/individual_config = false
@@ -64,17 +110,17 @@ settings/1/radius/value = 0.02
 settings/1/radius/damping_curve = null
 settings/1/stiffness/value = 1.0
 settings/1/stiffness/damping_curve = null
-settings/1/drag/value = 1.0
+settings/1/drag/value = 0.8
 settings/1/drag/damping_curve = null
 settings/1/gravity/value = 0.0
 settings/1/gravity/damping_curve = null
 settings/1/gravity/direction = Vector3(0, -1, 0)
 settings/1/joints/0/bone_name = "anchor_r"
-settings/1/joints/0/bone = 4
+settings/1/joints/0/bone = 7
 settings/1/joints/1/bone_name = "upperarm_r"
-settings/1/joints/1/bone = 5
+settings/1/joints/1/bone = 8
 settings/1/joints/2/bone_name = "forearm_r"
-settings/1/joints/2/bone = 6
+settings/1/joints/2/bone = 9
 settings/1/enable_all_child_collisions = true
 settings/1/exclude_collision_count = 0
 

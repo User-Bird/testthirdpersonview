@@ -5,25 +5,24 @@ const JUMP_VELOCITY = 3.0
 
 @onready var spring_arm = $CameraPivot/SpringArm3D
 @onready var visual_model = $player
-# 1. Grab the AnimationPlayer that Godot auto-generated inside your glb
 @onready var anim_player = $player/AnimationPlayer
 
-# 2. Add a variable to track if we were just falling
+# Variable to track if we were just falling
 var was_in_air = false
 
 func _physics_process(delta: float) -> void:
 	var gravity = get_gravity().y
 	if not is_on_floor():
-		# Change the -= to a += right here!
 		velocity.y += gravity * delta
 	
-	# ADD THIS TO FIX THE EXPLOSION:
-	if velocity.y < -30.0: # Play with this number. -30 is a fast, safe fall.
+	# Terminal velocity to prevent falling through the floor
+	if velocity.y < -30.0: 
 		velocity.y = -30.0
 
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
+	# Movement input and camera-relative direction
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	var direction = (spring_arm.global_transform.basis * Vector3(input_dir.x, 0, input_dir.y))
 	direction.y = 0
@@ -33,7 +32,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 		
-		# 3. The rotation offset fix is added here (+ PI / 2.0)
+		# Rotation offset fix (+ PI / 2.0)
 		var target_rotation = atan2(-velocity.x, -velocity.z) + (PI / 2.0)
 		visual_model.rotation.y = lerp_angle(visual_model.rotation.y, target_rotation, 0.15)
 	else:
@@ -43,18 +42,22 @@ func _physics_process(delta: float) -> void:
 	# --- ANIMATION LOGIC ---
 	if is_on_floor():
 		if was_in_air:
-			# We just hit the ground, play the heavy landing impact!
-			anim_player.play("Jump_end")
+			# Play Jump_end with a 0.1s blend to smooth it out, and 1.8x SPEED to make it snappy
+			anim_player.play("Jump_end", 0.1, 1.8)
 		elif direction and anim_player.current_animation != "Jump_end":
-			anim_player.play("Run", -1, 1.5)
+			# Blend into the run smoothly
+			anim_player.play("Run", 0.1, 1.5)
 		elif anim_player.current_animation != "Jump_end" or not anim_player.is_playing():
-			anim_player.play("Idle")
+			anim_player.play("Idle", 0.2)
 	else:
 		# We are in the air. Are we going up or down?
 		if velocity.y > 0:
-			anim_player.play("Jump_start")
+			# 0.1s blend smooths out the physical takeoff
+			anim_player.play("Jump_start", 0.1)
 		else:
-			anim_player.play("Jump_loop")
+			# 0.2s blend smooths the harsh transition at the top of the jump before falling
+			# (Change "Jump_fall" to whatever your loop animation is currently named!)
+			anim_player.play("Jump_fall", 0.2)
 
 	# Update our air tracking variable for the next frame
 	was_in_air = not is_on_floor()
