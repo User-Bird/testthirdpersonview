@@ -14,7 +14,8 @@ var was_in_air = false
 func _physics_process(delta: float) -> void:
 	var gravity = get_gravity().y
 	if not is_on_floor():
-		velocity.y -= gravity * delta
+		# Change the -= to a += right here!
+		velocity.y += gravity * delta
 	
 	# ADD THIS TO FIX THE EXPLOSION:
 	if velocity.y < -30.0: # Play with this number. -30 is a fast, safe fall.
