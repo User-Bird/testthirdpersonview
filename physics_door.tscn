@@ -54,6 +54,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3328875, -0.8241501)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003540039, 0.0059176683, -0.82353973)
 shape = SubResource("BoxShape3D_0vf6b")
 
-[node name="CollisionShape_door_hinge" type="CollisionShape3D" parent="HingePivot" unique_id=513764640]
+[node name="CollisionShape_door_knob" type="CollisionShape3D" parent="HingePivot" unique_id=513764640]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0007510185, -1.5355461)
 shape = SubResource("SphereShape3D_rxlmh")
