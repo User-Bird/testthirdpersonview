@@ -2,48 +2,38 @@ extends Node3D
 
 @onready var hinge = $HingePivot
 @onready var interact_zone = $Area3D
+
 @onready var door_collision1 = $HingePivot/CollisionShape_door
 @onready var door_collision2 = $HingePivot/CollisionShape_door_hinge
 
 var is_open: bool = false
-var is_moving: bool = false
 var player_in_zone: bool = false
+var target_angle: float = 0.0
+
+# Added just for the print tracker
+var last_state: bool = false 
 
 func _ready() -> void:
 	interact_zone.body_entered.connect(_on_body_entered)
 	interact_zone.body_exited.connect(_on_body_exited)
 
-func _input(event: InputEvent) -> void:
-	if player_in_zone and event.is_action_pressed("interact") and not is_moving:
-		toggle_door()
+func _process(delta: float) -> void:
+	if player_in_zone and Input.is_action_just_pressed("interact"):
+		is_open = !is_open
+		target_angle = 90.0 if is_open else 0.0
+		
+		# THE FIX: This perfectly handles both simultaneously. 
+		# If is_open is true, disabled becomes true. If false, disabled becomes false.
+		door_collision1.set_deferred("disabled", is_open)
+		door_collision2.set_deferred("disabled", is_open)
 
-func toggle_door() -> void:
-	is_moving = true
-	is_open = !is_open
-	
-	if is_open:
-		door_collision1.set_deferred("disabled", true)
-		if door_collision2 != null:
-			door_collision2.set_deferred("disabled", true)
-	
-	var target_angle = 90.0 if is_open else 0.0
-	
-	var tween = create_tween()
-	tween.set_trans(Tween.TRANS_SINE)
-	tween.set_ease(Tween.EASE_IN_OUT)
-	
-	# We are now tweening the AnimatableBody3D directly!
-	tween.tween_property(hinge, "rotation:y", deg_to_rad(target_angle), 0.5)
-	
-	tween.finished.connect(_on_tween_finished)
+	# The Print Tracker: It will only print when the exact moment the state flips
+	if door_collision1.disabled != last_state:
+		print("DOOR COLLISIONS DISABLED: ", door_collision1.disabled)
+		last_state = door_collision1.disabled
 
-func _on_tween_finished() -> void:
-	is_moving = false 
-	
-	if not is_open:
-		door_collision1.set_deferred("disabled", false)
-		if door_collision2 != null:
-			door_collision2.set_deferred("disabled", false)
+	# The smooth rotation
+	hinge.rotation_degrees.y = lerp(hinge.rotation_degrees.y, target_angle, delta * 8.0)
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is CharacterBody3D:
