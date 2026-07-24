@@ -34,6 +34,9 @@ height = 0.969574
 [sub_resource type="SphereShape3D" id="SphereShape3D_rxlmh"]
 radius = 0.31072372
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_hqtel"]
+size = Vector3(0.10534668, 2.758789, 0.13316345)
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_0vf6b"]
 radius = 0.2310519
 
@@ -252,6 +255,10 @@ shape = SubResource("CapsuleShape3D_i3pqv")
 [node name="left_bubble_collision" type="CollisionShape3D" parent="." unique_id=2045657896]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013125062, 0.5787552, 0.39553386)
 shape = SubResource("SphereShape3D_rxlmh")
+
+[node name="CollisionShape_right" type="CollisionShape3D" parent="." unique_id=1506721356]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011110902, 1.9670014, -0.5307128)
+shape = SubResource("BoxShape3D_hqtel")
 
 [node name="right_bubble_collision" type="CollisionShape3D" parent="." unique_id=1112244798]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022828072, 0.6246084, -0.37915677)

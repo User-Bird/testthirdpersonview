@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 		velocity.z = direction.z * SPEED
 		
 		# Rotation offset fix (+ PI / 2.0)
-		var target_rotation = atan2(-velocity.x, -velocity.z) + (PI / 2.0)
+		var target_rotation = atan2(-velocity.x, -velocity.z)+ PI / 2.0
 		visual_model.rotation.y = lerp_angle(visual_model.rotation.y, target_rotation, 0.15)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)

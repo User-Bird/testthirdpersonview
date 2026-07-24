@@ -44,18 +44,16 @@ shape = SubResource("BoxShape3D_v64fn")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011734009, 1.3742676, -0.016418457)
 shape = SubResource("BoxShape3D_1y32p")
 
-[node name="HingePivot" type="Node3D" parent="." unique_id=677660414]
+[node name="HingePivot" type="AnimatableBody3D" parent="." unique_id=1691893843]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3328875, 0.8241501)
 
-[node name="Door" type="AnimatableBody3D" parent="HingePivot" unique_id=531462634]
+[node name="door_model" parent="HingePivot" unique_id=1412404910 instance=ExtResource("2_kx3qq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3328875, -0.8241501)
 
-[node name="door_model" parent="HingePivot/Door" unique_id=1412404910 instance=ExtResource("2_kx3qq")]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HingePivot/Door" unique_id=914333554]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003540039, 1.3388052, 0.00061035156)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HingePivot" unique_id=914333554]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003540039, 0.0059176683, -0.82353973)
 shape = SubResource("BoxShape3D_0vf6b")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="HingePivot/Door" unique_id=513764640]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3336385, -0.7113959)
+[node name="CollisionShape_door_hinge" type="CollisionShape3D" parent="HingePivot" unique_id=513764640]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0007510185, -1.5355461)
 shape = SubResource("SphereShape3D_rxlmh")
