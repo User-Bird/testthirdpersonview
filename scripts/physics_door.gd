@@ -61,9 +61,9 @@ func _on_tween_finished() -> void:
 			door_collision2.set_deferred("disabled", false)
 
 func _on_body_entered(body: Node3D) -> void:
-	if body.name == "Character":
+	if body.name == "Player":
 		player_node = body 
 
 func _on_body_exited(body: Node3D) -> void:
-	if body.name == "Character":
+	if body.name == "Player":
 		player_node = null
