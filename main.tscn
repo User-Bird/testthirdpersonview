@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://cumi3q8scpak7"]
 
 [ext_resource type="PackedScene" uid="uid://dcwu6tegbrq0t" path="res://player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://do8lbs07n0hfx" path="res://physics_door.tscn" id="2_0xm2m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rxlmh"]
-size = Vector3(15, 0.3, 15)
+size = Vector3(50, 0.3, 50)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0vf6b"]
-size = Vector3(15, 0.3, 15)
+size = Vector3(50, 0.3, 50)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0xm2m"]
 
@@ -81,3 +82,6 @@ shape = SubResource("BoxShape3D_1y32p")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Envirement/box4" unique_id=873612596]
 mesh = SubResource("BoxMesh_ahv2i")
+
+[node name="DoorPrefab" parent="." unique_id=1893577664 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.858973, 0.523367, 0.12070024)

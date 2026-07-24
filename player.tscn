@@ -48,11 +48,45 @@ script = ExtResource("1_i3pqv")
 
 [node name="player" parent="." unique_id=202510506 instance=ExtResource("1_4flbx")]
 
-[node name="goo_surface_front1" parent="player/Armature/Skeleton3D/goo_surface_front1_bone" parent_id_path=PackedInt32Array(202510506, 764609336) index="0" unique_id=1595093050]
+[node name="Skeleton3D" parent="player/Armature" parent_id_path=PackedInt32Array(202510506, 1565979592) index="0" unique_id=779132484]
+bones/0/position = Vector3(-1.0540511e-15, 0.24597003, 0.09795772)
+bones/0/rotation = Quaternion(-1.946818e-07, -0.01615166, 0.99986964, 3.1448468e-09)
+bones/3/position = Vector3(2.6552766e-10, 0.27368674, 4.4168107e-08)
+bones/3/scale = Vector3(0.99999994, 1, 1)
+bones/4/rotation = Quaternion(0.99998385, 0.0037368147, -0.0028718994, -0.0032075935)
+
+[node name="left_eye_bone" parent="player/Armature/Skeleton3D" index="0" unique_id=1966426941]
+transform = Transform3D(0.9884507, -0.15153441, -0.0015598263, 0.1514994, 0.9878726, 0.033996426, -0.0036107171, -0.0338401, 0.9994208, 0.4322711, 0.6434018, 0.12929095)
+
+[node name="left_puple_bone" parent="player/Armature/Skeleton3D" index="1" unique_id=1100122221]
+transform = Transform3D(0.9947333, -0.102495946, -0.00052198564, 0.10249593, 0.99468166, 0.010161363, -0.0005222888, -0.010161349, 0.9999482, 0.4303799, 0.70734954, 0.16686878)
+
+[node name="left_eyebrow_bone" parent="player/Armature/Skeleton3D" index="2" unique_id=1804568152]
+transform = Transform3D(0.99991816, 0.012788928, 0.00016042424, -0.007812116, 0.60077256, 0.799382, 0.010126859, -0.79931784, 0.6008234, 0.37572265, 0.8310302, 0.20101832)
+
+[node name="right_eye_bone" parent="player/Armature/Skeleton3D" index="3" unique_id=1255459396]
+transform = Transform3D(0.98949176, -0.14458796, -0.0005568317, 0.14458337, 0.98947966, -0.005047786, 0.001280823, 0.004914235, 0.999987, 0.42488816, 0.63837653, -0.14410603)
+
+[node name="right_puple_bone" parent="player/Armature/Skeleton3D" index="4" unique_id=1479883476]
+transform = Transform3D(0.9910303, -0.1335446, 0.0049860473, 0.13363731, 0.9902544, -0.039207693, 0.0002985202, 0.03952233, 0.9992187, 0.42188266, 0.7195847, -0.1621817)
+
+[node name="right_eyebrow_bone" parent="player/Armature/Skeleton3D" index="5" unique_id=834727979]
+transform = Transform3D(0.03684055, 0.14673738, -0.98848915, -0.88573813, 0.46281108, 0.03569141, 0.46272105, 0.8742277, 0.14702103, 0.36017233, 0.84159404, -0.19599357)
+
+[node name="mouth_bone" parent="player/Armature/Skeleton3D" index="6" unique_id=759432382]
+transform = Transform3D(0.9862317, -0.08624845, 0.1410961, -0.14205994, -0.005110753, 0.98984474, -0.08465146, -0.99626064, -0.017292902, 0.44776616, 0.60765994, 0.0096268905)
+
+[node name="tie_bone" parent="player/Armature/Skeleton3D" index="7" unique_id=1185185871]
+transform = Transform3D(-0.80169797, -0.099714644, 0.58936095, 0.11922589, -0.99285024, -0.0058022444, 0.5857273, 0.06561489, 0.80785245, 0.4295235, 0.49330458, -0.0073946444)
+
+[node name="goo_surface_front1_bone" parent="player/Armature/Skeleton3D" index="8" unique_id=764609336]
+transform = Transform3D(0.9763576, -0.21416244, -0.029331345, 0.21416244, 0.9399684, 0.26569492, -0.029331338, -0.26569495, 0.96361077, 0.2484377, 1.1323149, 0.45887664)
+
+[node name="goo_surface_front1" parent="player/Armature/Skeleton3D/goo_surface_front1_bone" index="0" unique_id=1595093050]
 surface_material_override/0 = ExtResource("3_sweqy")
 
-[node name="Emitter_Front1" type="BoneAttachment3D" parent="player/Armature/Skeleton3D" parent_id_path=PackedInt32Array(202510506, 779132484) index="9" unique_id=925809637]
-transform = Transform3D(0.9763576, -0.21416244, -0.029331347, 0.21416244, 0.93996835, 0.2656949, -0.029331338, -0.26569495, 0.9636107, 0.2484377, 1.1323149, 0.45887655)
+[node name="Emitter_Front1" type="BoneAttachment3D" parent="player/Armature/Skeleton3D" index="9" unique_id=925809637]
+transform = Transform3D(0.9763576, -0.21416244, -0.029331345, 0.21416244, 0.9399684, 0.26569492, -0.029331338, -0.26569495, 0.96361077, 0.2484377, 1.1323149, 0.45887664)
 bone_name = "goo_surface_front1_bone"
 bone_idx = 18
 
@@ -66,11 +100,14 @@ local_coords = true
 process_material = SubResource("ParticleProcessMaterial_hqtel")
 draw_pass_1 = SubResource("SphereMesh_nvl01")
 
-[node name="goo_surface_back1" parent="player/Armature/Skeleton3D/goo_surface_back1_bone" parent_id_path=PackedInt32Array(202510506, 2514991) index="0" unique_id=1417618379]
+[node name="goo_surface_back1_bone" parent="player/Armature/Skeleton3D" index="10" unique_id=2514991]
+transform = Transform3D(0.96059906, 0.2725105, 0.054658007, -0.27559212, 0.9083966, 0.31442758, 0.036033656, -0.31710222, 0.9477064, -0.4055503, 0.77651066, 0.20538817)
+
+[node name="goo_surface_back1" parent="player/Armature/Skeleton3D/goo_surface_back1_bone" index="0" unique_id=1417618379]
 surface_material_override/0 = ExtResource("3_sweqy")
 
-[node name="Emitter_Back1" type="BoneAttachment3D" parent="player/Armature/Skeleton3D" parent_id_path=PackedInt32Array(202510506, 779132484) index="11" unique_id=1576664680]
-transform = Transform3D(0.96059906, 0.2725105, 0.054658007, -0.2755921, 0.90839654, 0.31442755, 0.036033653, -0.3171022, 0.94770634, -0.4055503, 0.77651066, 0.20538811)
+[node name="Emitter_Back1" type="BoneAttachment3D" parent="player/Armature/Skeleton3D" index="11" unique_id=1576664680]
+transform = Transform3D(0.96059906, 0.2725105, 0.054658007, -0.27559212, 0.9083966, 0.31442758, 0.036033656, -0.31710222, 0.9477064, -0.4055503, 0.77651066, 0.20538817)
 bone_name = "goo_surface_back1_bone"
 bone_idx = 19
 
@@ -84,11 +121,14 @@ local_coords = true
 process_material = SubResource("ParticleProcessMaterial_hqtel")
 draw_pass_1 = SubResource("SphereMesh_nvl01")
 
-[node name="goo_surface_back2" parent="player/Armature/Skeleton3D/goo_surface_back2_bone" parent_id_path=PackedInt32Array(202510506, 1954298857) index="0" unique_id=228700219]
+[node name="goo_surface_back2_bone" parent="player/Armature/Skeleton3D" index="12" unique_id=1954298857]
+transform = Transform3D(0.9999998, 2.6477068e-08, 0, -2.561029e-08, 1, 9.010546e-08, 1.7462298e-10, -9.013456e-08, 1, -0.3648949, 0.5555641, -0.27791587)
+
+[node name="goo_surface_back2" parent="player/Armature/Skeleton3D/goo_surface_back2_bone" index="0" unique_id=228700219]
 surface_material_override/0 = ExtResource("3_sweqy")
 
-[node name="Emitter_Back2" type="BoneAttachment3D" parent="player/Armature/Skeleton3D" parent_id_path=PackedInt32Array(202510506, 779132484) index="13" unique_id=405483522]
-transform = Transform3D(0.9999998, 2.6011378e-08, -5.820766e-11, -2.607598e-08, 0.99999994, 9.010546e-08, 1.1641532e-10, -9.013456e-08, 0.99999994, -0.3648949, 0.55556405, -0.27791592)
+[node name="Emitter_Back2" type="BoneAttachment3D" parent="player/Armature/Skeleton3D" index="13" unique_id=405483522]
+transform = Transform3D(0.9999998, 2.6477068e-08, 0, -2.561029e-08, 1, 9.010546e-08, 1.7462298e-10, -9.013456e-08, 1, -0.3648949, 0.5555641, -0.27791587)
 bone_name = "goo_surface_back2_bone"
 bone_idx = 20
 
@@ -102,11 +142,14 @@ local_coords = true
 process_material = SubResource("ParticleProcessMaterial_hqtel")
 draw_pass_1 = SubResource("SphereMesh_nvl01")
 
-[node name="goo_surface_front2" parent="player/Armature/Skeleton3D/goo_surface_front2_bone" parent_id_path=PackedInt32Array(202510506, 1487171748) index="0" unique_id=624731946]
+[node name="goo_surface_front2_bone" parent="player/Armature/Skeleton3D" index="14" unique_id=1487171748]
+transform = Transform3D(0.9691311, 0.24063389, -0.053667895, -0.24063383, 0.8758248, -0.4183612, -0.053668194, 0.4183611, 0.90669376, -0.13381863, 1.1152096, -0.562719)
+
+[node name="goo_surface_front2" parent="player/Armature/Skeleton3D/goo_surface_front2_bone" index="0" unique_id=624731946]
 surface_material_override/0 = ExtResource("3_sweqy")
 
-[node name="Emitter_Front2" type="BoneAttachment3D" parent="player/Armature/Skeleton3D" parent_id_path=PackedInt32Array(202510506, 779132484) index="15" unique_id=1759019537]
-transform = Transform3D(0.9691311, 0.24063389, -0.0536679, -0.24063382, 0.87582475, -0.41836116, -0.05366819, 0.41836107, 0.9066937, -0.13381863, 1.1152096, -0.562719)
+[node name="Emitter_Front2" type="BoneAttachment3D" parent="player/Armature/Skeleton3D" index="15" unique_id=1759019537]
+transform = Transform3D(0.9691311, 0.24063389, -0.053667895, -0.24063383, 0.8758248, -0.4183612, -0.053668194, 0.4183611, 0.90669376, -0.13381863, 1.1152096, -0.562719)
 bone_name = "goo_surface_front2_bone"
 bone_idx = 21
 
@@ -120,7 +163,10 @@ local_coords = true
 process_material = SubResource("ParticleProcessMaterial_hqtel")
 draw_pass_1 = SubResource("SphereMesh_nvl01")
 
-[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="player/Armature/Skeleton3D" parent_id_path=PackedInt32Array(202510506, 779132484) index="18" unique_id=1803145347]
+[node name="alien_limbs" parent="player/Armature/Skeleton3D" index="17" unique_id=1485586730]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 3.719853e-05, 0.0022319118, 0.00029758824)
+
+[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="player/Armature/Skeleton3D" index="18" unique_id=1803145347]
 setting_count = 2
 settings/0/root_bone_name = "anchor_r"
 settings/0/root_bone = 7
@@ -146,9 +192,10 @@ settings/0/joints/1/bone = 8
 settings/0/joints/2/bone_name = "forearm_r"
 settings/0/joints/2/bone = 9
 settings/0/enable_all_child_collisions = false
-settings/0/collision_count = 2
-settings/0/collisions/0 = NodePath("SpringBoneCollision_right_bubble")
-settings/0/collisions/1 = NodePath("SpringBoneCollision_face_bubble")
+settings/0/collision_count = 3
+settings/0/collisions/0 = NodePath("SpringBoneCollision_face_bubble")
+settings/0/collisions/1 = NodePath("SpringBoneCollision_right_bubble")
+settings/0/collisions/2 = NodePath("SpringBoneCollision_right_bubble_itself")
 settings/1/root_bone_name = "anchor_l"
 settings/1/root_bone = 4
 settings/1/end_bone_name = "forearm_l"
@@ -173,9 +220,10 @@ settings/1/joints/1/bone = 5
 settings/1/joints/2/bone_name = "forearm_l"
 settings/1/joints/2/bone = 6
 settings/1/enable_all_child_collisions = false
-settings/1/collision_count = 2
-settings/1/collisions/0 = NodePath("SpringBoneCollision_left_bubble")
-settings/1/collisions/1 = NodePath("SpringBoneCollision_face_bubble")
+settings/1/collision_count = 3
+settings/1/collisions/0 = NodePath("SpringBoneCollision_face_bubble")
+settings/1/collisions/1 = NodePath("SpringBoneCollision_left_bubble")
+settings/1/collisions/2 = NodePath("SpringBoneCollision_left_bubble_itself")
 
 [node name="SpringBoneCollision_right_bubble" type="SpringBoneCollisionSphere3D" parent="player/Armature/Skeleton3D/SpringBoneSimulator3D" unique_id=2137612403]
 transform = Transform3D(1.0000008, 0, 0, 0, 1.0000008, 0, 0, 0, 1.0000008, 0, 1.0870775, -0.266656)
@@ -187,7 +235,15 @@ radius = 0.363
 
 [node name="SpringBoneCollision_face_bubble" type="SpringBoneCollisionSphere3D" parent="player/Armature/Skeleton3D/SpringBoneSimulator3D" unique_id=1680263751]
 transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, 0, 0, 0, 1.0000002, 0, 0.5850139, 0)
-radius = 0.41
+radius = 0.436
+
+[node name="SpringBoneCollision_left_bubble_itself" type="SpringBoneCollisionSphere3D" parent="player/Armature/Skeleton3D/SpringBoneSimulator3D" unique_id=908625395]
+transform = Transform3D(1.0000008, 0, 0, 0, 1.0000008, 0, 0, 0, 1.0000008, -0.21224037, 0.7482916, 0.3950614)
+radius = 0.288
+
+[node name="SpringBoneCollision_right_bubble_itself" type="SpringBoneCollisionSphere3D" parent="player/Armature/Skeleton3D/SpringBoneSimulator3D" unique_id=1525880616]
+transform = Transform3D(1.0000015, 0, 0, 0, 1.0000015, 0, 0, 0, 1.0000015, -0.2179945, 0.77005976, -0.42601198)
+radius = 0.175
 
 [node name="face_bubble" type="CollisionShape3D" parent="." unique_id=830991158]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4960373, 0.026358634)

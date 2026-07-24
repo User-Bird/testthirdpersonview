@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://do8lbs07n0hfx"]
+
+[ext_resource type="PackedScene" uid="uid://bud3udp7lp1uw" path="res://assets/door_frame.glb" id="1_jqp1o"]
+[ext_resource type="Script" uid="uid://b1or8wrqwfgxk" path="res://scripts/physics_door.gd" id="1_kx3qq"]
+[ext_resource type="PackedScene" uid="uid://dkjgjsuinsm0r" path="res://assets/door.glb" id="2_kx3qq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rxlmh"]
+size = Vector3(0.10534668, 2.758789, 0.13316345)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v64fn"]
+size = Vector3(0.133, 0.105, 1.8327553)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1y32p"]
+size = Vector3(2.52359, 2.746582, 2.4525146)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0vf6b"]
+size = Vector3(0.13110352, 2.6403809, 1.6721191)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rxlmh"]
+radius = 0.20591605
+
+[node name="DoorPrefab" type="Node3D" unique_id=1893577664]
+script = ExtResource("1_kx3qq")
+
+[node name="DoorFrame" type="StaticBody3D" parent="." unique_id=473422757]
+
+[node name="door_frame_model" parent="DoorFrame" unique_id=1020845315 instance=ExtResource("1_jqp1o")]
+
+[node name="CollisionShape_left" type="CollisionShape3D" parent="DoorFrame" unique_id=1188759401]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0020141602, 1.3882462, 0.9079056)
+shape = SubResource("BoxShape3D_rxlmh")
+
+[node name="CollisionShape_right" type="CollisionShape3D" parent="DoorFrame" unique_id=519061167]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0020141602, 1.3882462, -0.92624664)
+shape = SubResource("BoxShape3D_rxlmh")
+
+[node name="CollisionShape_top" type="CollisionShape3D" parent="DoorFrame" unique_id=826551195]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.002, 2.7052941, -0.0029589534)
+shape = SubResource("BoxShape3D_v64fn")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1679633815]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2144424604]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011734009, 1.3742676, -0.016418457)
+shape = SubResource("BoxShape3D_1y32p")
+
+[node name="HingePivot" type="Node3D" parent="." unique_id=677660414]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3328875, 0.8241501)
+
+[node name="Door" type="AnimatableBody3D" parent="HingePivot" unique_id=531462634]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3328875, -0.8241501)
+
+[node name="door_model" parent="HingePivot/Door" unique_id=1412404910 instance=ExtResource("2_kx3qq")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HingePivot/Door" unique_id=914333554]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003540039, 1.3388052, 0.00061035156)
+shape = SubResource("BoxShape3D_0vf6b")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="HingePivot/Door" unique_id=513764640]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3336385, -0.7113959)
+shape = SubResource("SphereShape3D_rxlmh")
