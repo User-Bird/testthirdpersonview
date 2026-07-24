@@ -50,7 +50,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3328875, 0.8241501)
 [node name="door_model" parent="HingePivot" unique_id=1412404910 instance=ExtResource("2_kx3qq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3328875, -0.8241501)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HingePivot" unique_id=914333554]
+[node name="CollisionShape_door" type="CollisionShape3D" parent="HingePivot" unique_id=914333554]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003540039, 0.0059176683, -0.82353973)
 shape = SubResource("BoxShape3D_0vf6b")
 

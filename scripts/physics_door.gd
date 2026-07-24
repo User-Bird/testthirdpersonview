@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var hinge = $HingePivot
 @onready var interact_zone = $Area3D
-@onready var door_collision1 = $HingePivot/CollisionShape3D
+@onready var door_collision1 = $HingePivot/CollisionShape_door
 @onready var door_collision2 = $HingePivot/CollisionShape_door_hinge
 
 var is_open: bool = false
