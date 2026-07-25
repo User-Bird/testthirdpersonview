@@ -34,9 +34,6 @@ height = 0.969574
 [sub_resource type="SphereShape3D" id="SphereShape3D_rxlmh"]
 radius = 0.31072372
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_hqtel"]
-size = Vector3(0.10534668, 2.758789, 0.13316345)
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_0vf6b"]
 radius = 0.2310519
 
@@ -251,26 +248,27 @@ radius = 0.175
 [node name="face_bubble" type="CollisionShape3D" parent="." unique_id=830991158]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4960373, 0.026358634)
 shape = SubResource("CapsuleShape3D_i3pqv")
+debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="left_bubble_collision" type="CollisionShape3D" parent="." unique_id=2045657896]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013125062, 0.5787552, 0.39553386)
 shape = SubResource("SphereShape3D_rxlmh")
-
-[node name="CollisionShape_right" type="CollisionShape3D" parent="." unique_id=1506721356]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011110902, 1.9670014, -0.5307128)
-shape = SubResource("BoxShape3D_hqtel")
+debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="right_bubble_collision" type="CollisionShape3D" parent="." unique_id=1112244798]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022828072, 0.6246084, -0.37915677)
 shape = SubResource("SphereShape3D_0vf6b")
+debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="top_left_bubble_collision" type="CollisionShape3D" parent="." unique_id=1403048733]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9343872, 0.15002945)
 shape = SubResource("SphereShape3D_1y32p")
+debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="top_right_bubble_collision" type="CollisionShape3D" parent="." unique_id=1910677645]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8845246, -0.20304155)
 shape = SubResource("SphereShape3D_v64fn")
+debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="CameraPivot" type="Node3D" parent="." unique_id=1204758923]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0967617, 0)

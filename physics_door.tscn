@@ -11,7 +11,7 @@ size = Vector3(0.10534668, 2.758789, 0.13316345)
 size = Vector3(0.133, 0.105, 1.8327553)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1y32p"]
-size = Vector3(2.52359, 2.746582, 2.4525146)
+size = Vector3(3.6157608, 2.746582, 2.4525146)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0vf6b"]
 size = Vector3(0.13110352, 2.6403809, 1.6721191)
@@ -29,20 +29,24 @@ script = ExtResource("1_kx3qq")
 [node name="CollisionShape_left" type="CollisionShape3D" parent="DoorFrame" unique_id=1188759401]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0020141602, 1.3882462, 0.9079056)
 shape = SubResource("BoxShape3D_rxlmh")
+debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="CollisionShape_right" type="CollisionShape3D" parent="DoorFrame" unique_id=519061167]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0020141602, 1.3882462, -0.92624664)
 shape = SubResource("BoxShape3D_rxlmh")
+debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="CollisionShape_top" type="CollisionShape3D" parent="DoorFrame" unique_id=826551195]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.002, 2.7052941, -0.0029589534)
 shape = SubResource("BoxShape3D_v64fn")
+debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1679633815]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2144424604]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011734009, 1.3742676, -0.016418457)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.021205902, 1.3742676, -0.016418457)
 shape = SubResource("BoxShape3D_1y32p")
+debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="HingePivot" type="AnimatableBody3D" parent="." unique_id=1691893843]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3328875, 0.8241501)
@@ -53,7 +57,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3328875, -0.8241501)
 [node name="CollisionShape_door" type="CollisionShape3D" parent="HingePivot" unique_id=914333554]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003540039, 0.0059176683, -0.82353973)
 shape = SubResource("BoxShape3D_0vf6b")
+debug_color = Color(0, 0.6, 0.7, 0.42)
 
 [node name="CollisionShape_door_knob" type="CollisionShape3D" parent="HingePivot" unique_id=513764640]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0007510185, -1.5355461)
 shape = SubResource("SphereShape3D_rxlmh")
+debug_color = Color(0, 0.6, 0.7, 0.42)
